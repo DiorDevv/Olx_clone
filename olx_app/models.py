@@ -32,13 +32,13 @@ class Ads(BaseModel):
 
 
 class AdsAtribute(BaseModel):
-    value = models.CharField(max_length=100)
+    value = models.CharField(max_length=100, null=True, blank=True)
 
     ads = models.ForeignKey(Ads, on_delete=models.CASCADE)
     attribute = models.ForeignKey(Attribute, on_delete=models.CASCADE)
 
 
 class AdsAtributeOptions(BaseModel):
-    ads = models.ForeignKey(Ads, on_delete=models.CASCADE)
-    ads_atribute_value = models.ForeignKey(Attribute, on_delete=models.CASCADE)
+    # ads = models.ForeignKey(Ads, on_delete=models.CASCADE)
+    ads_atribute_value = models.ForeignKey(AdsAtribute, on_delete=models.CASCADE)
     option = models.ForeignKey('attribute.AttributeOptions', on_delete=models.CASCADE)

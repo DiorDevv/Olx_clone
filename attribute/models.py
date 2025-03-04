@@ -27,6 +27,7 @@ class Attribute(BaseModel):
 class AttributeOptions(BaseModel):
     title = models.CharField(max_length=255)
     order = models.PositiveIntegerField(default=0)
+    attribute = models.ForeignKey(Attribute, related_name='options', on_delete=models.CASCADE)
 
     class Meta:
         verbose_name = 'Attribute Options'
