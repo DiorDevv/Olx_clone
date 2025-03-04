@@ -28,6 +28,8 @@ INSTALLED_APPS = [
 #     APPS
 
     'olx_app',
+    'comman',
+    'attribute',
 ]
 
 MIDDLEWARE = [
